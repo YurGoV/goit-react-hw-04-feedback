@@ -10,7 +10,6 @@ export const FeedbackOptions = ({ onVote, options }) => {
 
   console.log(options);
 
-  //todo: зрозуміти коли які функції застосовувати (анонімні, стрілки і т.п.)
   return (
     <ButtonsStyle>
       {options.map(option => (

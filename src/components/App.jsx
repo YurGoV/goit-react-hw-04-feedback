@@ -1,4 +1,3 @@
-// import React, { Component } from 'react';
 import {useState} from "react";
 import { Stat } from './App.styled';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
@@ -19,7 +18,7 @@ export const App = () => {
   const changeVoteState = (data) => {
     data === 'good' ? setGood(good + 1) :
       data === 'neutral' ? setNeutral(neutral + 1) :
-        data === 'bad' ? setBad(bad + 1) : console.log('error');
+        data === 'bad' ? setBad(bad + 1) : console.log('error: no vote value');
   }
     // console.log('data: ', data);
 
@@ -50,57 +49,3 @@ export const App = () => {
   );
 }
 
-
-/*
-
-export class OldApp extends Component {
-
-  constructor() {
-    super();
-    this.state = {
-      good: 0,
-      neutral: 0,
-      bad: 0,
-    };
-  };
-
-
-
-  changeVoteState = (data) => {
-    this.setState(prevState => ({
-      [data]: prevState[data] + 1,
-    }));
-  };
-
-  isFeedback = () => this.state.good > 0 || this.state.neutral > 0 || this.state.bad > 0;
-
-
-  render() {
-    const { good, neutral, bad } = this.state;
-
-    return (
-
-      <Section title='Please Leave Feedback'>
-
-        <FeedbackOptions
-          options={Object.keys(this.state)}
-          onVote={this.changeVoteState}>
-        </FeedbackOptions>
-
-        <Stat isData={this.isFeedback()}>Statistics</Stat>
-        {this.isFeedback() ? (
-          <Statistics
-            good={good}
-            neutral={neutral}
-            bad={bad}>
-          </Statistics>
-        ) : (
-          <NoFeedbackNotification message='There is no feedback'></NoFeedbackNotification>
-        )}
-
-      </Section>
-    );
-  }
-}
-
-*/
