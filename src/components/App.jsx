@@ -1,9 +1,9 @@
 import {useState} from "react";
-import { Stat } from './App.styled';
-import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
-import { Statistics } from './Statistics/Statistics';
-import { Section } from './Section/Section';
-import { NoFeedbackNotification } from './Notification/Notification';
+import {Stat} from './App.styled';
+import {FeedbackOptions} from './FeedbackOptions/FeedbackOptions';
+import {Statistics} from './Statistics/Statistics';
+import {Section} from './Section/Section';
+import {NoFeedbackNotification} from './Notification/Notification';
 
 
 const keys = ['good', 'neutral', 'bad']
@@ -20,7 +20,6 @@ export const App = () => {
       data === 'neutral' ? setNeutral(neutral + 1) :
         data === 'bad' ? setBad(bad + 1) : console.log('error: no vote value');
   }
-    // console.log('data: ', data);
 
   const isFeedback = () => good > 0 || neutral > 0 || bad > 0;
 

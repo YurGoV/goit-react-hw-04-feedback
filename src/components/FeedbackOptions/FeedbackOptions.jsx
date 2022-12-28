@@ -1,14 +1,12 @@
 import React from 'react';
-import { Button, ButtonsStyle } from './FeedbackOptions.styled';
+import {Button, ButtonsStyle} from './FeedbackOptions.styled';
+import PropTypes from 'prop-types';
 
-export const FeedbackOptions = ({ onVote, options }) => {
+export const FeedbackOptions = ({onVote, options}) => {
 
   const onVoteClick = vote => {
-    console.log(vote.option);
     onVote(vote.option);
   };
-
-  console.log(options);
 
   return (
     <ButtonsStyle>
@@ -16,13 +14,16 @@ export const FeedbackOptions = ({ onVote, options }) => {
           <Button type='button'
                   key={options.indexOf(option)}
                   vote={option}
-                  onClick={() => onVoteClick({ option })}
+                  onClick={() => onVoteClick({option})}
           >{option}</Button>
         ),
-      )
-
-      }
+      )}
     </ButtonsStyle>
   );
 };
+
+FeedbackOptions.propTypes = {
+  onVote: PropTypes.func.isRequired,
+  options: PropTypes.array.isRequired,
+}
 

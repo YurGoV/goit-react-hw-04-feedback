@@ -1,7 +1,8 @@
-import { Notification } from './Notification.styled';
+import React from 'react';
+import {Notification} from './Notification.styled';
 import PropTypes from 'prop-types';
 
-export const NoFeedbackNotification = ({ message }) => (
+export const NoFeedbackNotification = ({message}) => (
   <Notification>{message}</Notification>
 );
 
